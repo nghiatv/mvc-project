@@ -2,9 +2,9 @@
 
 
 <?php
-echo "<pre>";
-var_dump($re);
-echo "</pre>";
+//echo "<pre>";
+//var_dump($re);
+//echo "</pre>";
 ?>
     <header id="header"><!--header-->
         <div class="header_top"><!--header_top-->

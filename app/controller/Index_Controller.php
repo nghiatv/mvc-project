@@ -20,5 +20,9 @@ class Index_Controller extends Base_Controller
         $this->view->load('index', array(
             're' => $re
         ));
+
+        echo "<pre>";
+        var_dump($_SERVER);
+        echo "</pre>";
     }
 }

@@ -13,13 +13,14 @@ define('PATH_APPLICATION', __DIR__ . '/app');
 
 
 
-require_once PATH_SYSTEM."/config/config.php";
+require_once PATH_SYSTEM . "/config/config.php";
 
 //Danh sach tham so
 //bao gom CONTROLLER va ACTION
 
-require_once PATH_SYSTEM."/core/FT_Common.php";
 
-// Chay truong trinh
 
-FT_load();
+require PATH_SYSTEM . "/core/application.php";
+
+
+$app = new Application();

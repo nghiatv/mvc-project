@@ -11,9 +11,7 @@ class Index_Controller extends Base_Controller
 
     public function indexAction()
     {
-//        echo "<pre>";
-//        var_dump($this);
-//        echo "</pre>";
+
 
         $this->model->load('index');
         $re = $this->model->index->getAllUsers();

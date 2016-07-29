@@ -15,12 +15,9 @@ class Base_Controller extends FT_Controller
     {
         parent::__construct();
     }
-    public function load_header(){
 
-    }
-    public function load_footer(){
 
-    }
+
     public function __destruct()
     {
         // TODO: Implement __destruct() method.

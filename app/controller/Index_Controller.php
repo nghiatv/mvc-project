@@ -19,8 +19,8 @@ class Index_Controller extends Base_Controller
             're' => $re
         ));
 
-        echo "<pre>";
-        var_dump($_SERVER);
-        echo "</pre>";
+//        echo "<pre>";
+//        var_dump($_SERVER);
+//        echo "</pre>";
     }
 }

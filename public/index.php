@@ -7,15 +7,17 @@
  */
 
 // duong dan toi cac file he thong
-define('PATH_SYSTEM', __DIR__ . '/system');
-define('PATH_APPLICATION', __DIR__ . '/app');
+define('PATH_SYSTEM', dirname(__DIR__) . '/system');
+define('PATH_APPLICATION', dirname(__DIR__) . '/app');
 
-
+define('BASE_URL','http://localhost/mvc-project');
 
 
 require_once PATH_SYSTEM . "/config/config.php";
 
 //Danh sach tham so
+
+
 //bao gom CONTROLLER va ACTION
 
 

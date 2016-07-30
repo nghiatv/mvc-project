@@ -9,7 +9,7 @@
 if (!defined('PATH_SYSTEM')) die('Bad request');
 
 
-class FT_Libraty_Loader
+class FT_Library_Loader
 {
     public function load($library, $args = array())
     {
@@ -19,7 +19,6 @@ class FT_Libraty_Loader
             require(PATH_SYSTEM . '/library/' . $class . '.php');
 
             $this->{$library} = new $class($args);
-
 
         }
     }

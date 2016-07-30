@@ -13,23 +13,15 @@ class FT_Model
     public function __construct()
     {
         try{
-            $this->db = new PDO("mysql:host=".DB_HOST.";dbname=".DB_DBNAME,DB_USER,DB_PASS) or die("ahihi");
+            $this->db = new PDO("mysql:host=".DB_HOST.";dbname=".DB_DBNAME,DB_USER,DB_PASS) or die("Không thể kết nối tới cơ sở dữ liệu");
+            $this->db->exec("SET CHARACTER SET utf8");
+            $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
         }
         catch (PDOException $e){
             die($e->getMessage());
         }
 
     }
-    public function getAllUsers()
-    {
-        try{
-            $sql = "SELECT * FROM users WHERE  1";
-            $this->stmt = $this->db->prepare($sql);
-            $this->stmt->execute();
-        } catch(PDOException $e){
-            die($e->getMessage());
-        }
-        return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
+
 
 }

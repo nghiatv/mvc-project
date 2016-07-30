@@ -25,7 +25,7 @@ class FT_Controller
         $this->config->load('config');
         //  load library loader
         require_once PATH_SYSTEM . "/core/loader/FT_Library_Loader.php";
-        $this->library = new FT_Libraty_Loader();
+        $this->library = new FT_Library_Loader();
         //  load helper loader
 
         require PATH_SYSTEM . "/core/loader/FT_Helper_Loader.php";

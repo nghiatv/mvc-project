@@ -10,6 +10,7 @@ return array(
     'default_controller' => 'index',
     'default_action' => 'index',
     '404_controller' => 'error',
-    '404-action' => 'index'
+    '404-action' => 'index',
+    'base_url' =>'localhost/mvc-project'
 
 );

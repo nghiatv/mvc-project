@@ -17,9 +17,12 @@ class FT_Controller
     protected $library;// doi tuong library
     protected $helper; // doi tuong helper
     protected $config; // doi tuong config
+//    protected $param = array();
 
-    public function __construct($is_controller = true) // ham khoi tao
+    public function __construct() // ham khoi tao
     {
+//        $this->param = $param;
+
         require_once PATH_SYSTEM . "/core/loader/FT_Config_Loader.php";
         $this->config = new FT_Config_Loader();
         $this->config->load('config');

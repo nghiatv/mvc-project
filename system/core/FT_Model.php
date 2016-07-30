@@ -13,7 +13,7 @@ class FT_Model
     public function __construct()
     {
         try{
-            $this->db = new PDO("mysql:host=".DB_HOST.";dbname=".DB_DBNAME,DB_USER,DB_PASS) or die("Không thể kết nối tới cơ sở dữ liệu");
+            $this->db = new PDO("mysql:host=".DB_HOST.";dbname=".DB_DBNAME,DB_USER,DB_PASS) or die("Can not connect to database");
             $this->db->exec("SET CHARACTER SET utf8");
             $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
         }

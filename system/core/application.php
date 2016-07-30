@@ -28,22 +28,20 @@ class Application
         $controller = ucfirst(strtolower($controller)) . "_Controller";
 
         $action = empty($this->url_action) ? $config['default_action'] : $this->url_action;
-        $action = strtolower($action)."Action";
+        $action = strtolower($action) . "Action";
 
 
         if (!file_exists(PATH_APPLICATION . "/controller/" . $controller . ".php")) {
             die("Controller Not Found");
         }
 
-        require PATH_SYSTEM . "/core/FT_Controller.php";
-
+        //Kiem tra ton tai cua controller
         if (!file_exists(PATH_APPLICATION . "/core/Base_Controller.php")) {
             die("Base Controller Not Found");
         }
 
         require PATH_APPLICATION . "/core/Base_Controller.php";
-
-
+//        require PATH_APPLICATION."/core/Base_Model.php";
         require PATH_APPLICATION . "/controller/" . $controller . ".php";
 
         $controllerObj = new $controller();
@@ -54,19 +52,20 @@ class Application
 
         if (method_exists($controller, $action)) {
             if (!empty($this->url_param)) {
-                call_user_func_array(array($controller, $action), $this->url_param);
+                call_user_func_array(array($controllerObj, $action), $this->url_param);
             } else {
                 $controllerObj->{$action}();
             }
         }
-
+    //        print_r($this->url_action);
+    //        echo "<br>";
+    //        print_r($this->url_param);
 
     }
 
     function splitURL()
     {
         // splitURL
-
 
 
         if (isset($_GET['url'])) {
@@ -83,15 +82,11 @@ class Application
             $this->url_param = array_values($url);
 
 
-        }
-        else{
+        } else {
             $this->url_controller = null;
             $this->url_action = null;
         }
     }
-
-
-
 
 
 }

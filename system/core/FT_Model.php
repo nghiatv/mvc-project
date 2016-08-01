@@ -22,6 +22,9 @@ class FT_Model
         }
 
     }
+    public function getDb(){
+        return $this->db;
+    }
 
 
 }

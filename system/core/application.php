@@ -57,9 +57,9 @@ class Application
                 $controllerObj->{$action}();
             }
         }
-    //        print_r($this->url_action);
-    //        echo "<br>";
-    //        print_r($this->url_param);
+        echo 'Controller: ' . $controller . '<br>';
+        echo 'Action: ' . $action . '<br>';
+        echo 'Parameters: ' . print_r($this->url_param, true) . '<br>';
 
     }
 
@@ -85,6 +85,7 @@ class Application
         } else {
             $this->url_controller = null;
             $this->url_action = null;
+            $this->url_param = null;
         }
     }
 

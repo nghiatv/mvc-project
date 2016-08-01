@@ -7,10 +7,9 @@
  */
 
 include_once 'header.php';
-
+var_dump($product);
 
 ?>
-
     <header id="header"><!--header-->
         <div class="header_top"><!--header_top-->
             <div class="container">
@@ -314,19 +313,19 @@ include_once 'header.php';
                         <div class="col-sm-7">
                             <div class="product-information"><!--/product-information-->
                                 <img src="public/images/product-details/new.jpg" class="newarrival" alt="" />
-                                <h2>Anne Klein Sleeveless Colorblock Scuba</h2>
+                                <h2><?php echo $product['name'] ?></h2>
                                 <p>Web ID: 1089772</p>
                                 <img src="public/images/product-details/rating.png" alt="" />
 								<span>
-									<span>US $59</span>
+									<span>US $<?php echo $product['unit_price'] ?></span>
 									<label>Quantity:</label>
-									<input type="text" value="3" />
+									<input type="text" value="1" />
 									<button type="button" class="btn btn-fefault cart">
                                         <i class="fa fa-shopping-cart"></i>
                                         Add to cart
                                     </button>
 								</span>
-                                <p><b>Availability:</b> In Stock</p>
+                                <p><b>Availability:</b> <strong><?php echo $product['units_in_stock'] ?> </strong> In Stock</p>
                                 <p><b>Condition:</b> New</p>
                                 <p><b>Brand:</b> E-SHOPPER</p>
                                 <a href=""><img src="public/images/product-details/share.png" class="share img-responsive"  alt="" /></a>

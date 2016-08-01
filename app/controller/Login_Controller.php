@@ -26,6 +26,10 @@ class Login_Controller extends Base_Controller
               }
         }
     }
+    public function verifyAction(){
+        $this->library->load('login');
+
+    }
 
 
 }

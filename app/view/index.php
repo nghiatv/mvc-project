@@ -6,6 +6,9 @@
 
 session_start();
 var_dump($_SESSION);
+echo "<pre>";
+var_dump($re);
+echo "</pre>";
 //echo "<pre>";
 //var_dump($re);
 //echo "</pre>";

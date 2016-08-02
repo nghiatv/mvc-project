@@ -317,7 +317,7 @@ var_dump($product);
                                 <p>Web ID: 1089772</p>
                                 <img src="public/images/product-details/rating.png" alt="" />
 								<span>
-									<span>US $<?php echo $product['unit_price'] ?></span>
+									<span>US <?php echo $product['unit_price'] ?></span>
 									<label>Quantity:</label>
 									<input type="text" value="1" />
 									<button type="button" class="btn btn-fefault cart">

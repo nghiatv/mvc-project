@@ -9,7 +9,7 @@
 define('DB_HOST','localhost');
 define('DB_USER','root');
 define('DB_PASS','');
-define('DB_DBNAME','testmvc');
+define('DB_DBNAME','mvc-project');
 
 //thong so ve action va controller
 //define('CONTROLLER_DEFAULT','index');

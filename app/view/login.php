@@ -1,5 +1,13 @@
 <?php include_once 'header.php'?>
 
+<?php
+//echo "<pre>";
+//		if(isset($_SESSION)){
+//			var_dump($_SESSION);
+//		}
+//echo "</pre>";
+?>
+
 <body>
 	<header id="header"><!--header-->
 		<div class="header_top"><!--header_top-->
@@ -33,7 +41,7 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="index.html"><img src="public/images/home/logo.png" alt="" /></a>
+							<a href="index"><img src="public/images/home/logo.png" alt="" /></a>
 						</div>
 						<div class="btn-group pull-right">
 							<div class="btn-group">
@@ -64,9 +72,9 @@
 							<ul class="nav navbar-nav">
 								<li><a href=""><i class="fa fa-user"></i> Account</a></li>
 								<li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
-								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="login.html" class="active"><i class="fa fa-lock"></i> Login</a></li>
+								<li><a href="checkout"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+								<li><a href="cart"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><a href="login" class="active"><i class="fa fa-lock"></i> Login</a></li>
 							</ul>
 						</div>
 					</div>
@@ -88,24 +96,24 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.html">Home</a></li>
+								<li><a href="index">Home</a></li>
 								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.html">Products</a></li>
-										<li><a href="product-details.html">Product Details</a></li> 
-										<li><a href="checkout.html">Checkout</a></li> 
-										<li><a href="cart.html">Cart</a></li> 
-										<li><a href="login.html" class="active">Login</a></li> 
+                                        <li><a href="shop">Products</a></li>
+										<li><a href="product-details">Product Details</a></li> 
+										<li><a href="checkout">Checkout</a></li> 
+										<li><a href="cart">Cart</a></li> 
+										<li><a href="login" class="active">Login</a></li> 
                                     </ul>
                                 </li> 
 								<li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="blog.html">Blog List</a></li>
-										<li><a href="blog-single.html">Blog Single</a></li>
+                                        <li><a href="blog">Blog List</a></li>
+										<li><a href="blog-single">Blog Single</a></li>
                                     </ul>
                                 </li> 
-								<li><a href="404.html">404</a></li>
-								<li><a href="contact-us.html">Contact</a></li>
+								<li><a href="404">404</a></li>
+								<li><a href="contact-us">Contact</a></li>
 							</ul>
 						</div>
 					</div>
@@ -125,12 +133,17 @@
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
+
+						<h3><?php if(isset($_SESSION['error']['mes'])) echo $_SESSION['error']['mes']?></h3>
 						<form action="<?php echo BASE_URL ?>/login" method="post">
-							<input type="text" placeholder="Tài khoản" name="username" />
-							<input type="password" placeholder="Mật khẩu" name="password" />
+							<input type="text" placeholder="Tài khoản" name="username" id="username" value="<?php if(isset($_SESSION['info']['username'])) echo $_SESSION['info']['username']; ?>" />
+							<label for="username"><?php if(isset($_SESSION['error']['username'])) echo $_SESSION['error']['username'] ?></label>
+							<input type="password" placeholder="Mật khẩu" name="password" id="password" value="<?php if(isset($_SESSION['info']['password'])) echo $_SESSION['info']['password']; ?>" />
+							<label for="password"><?php if(isset($_SESSION['error']['password'])) echo $_SESSION['error']['password'] ?></label>
+							<br>
 							<span>
 								<input type="checkbox" class="checkbox"> 
-								Keep me signed in
+								<span>Keep me signed in</span>
 							</span>
 							<button type="submit" class="btn btn-default">Login</button>
 						</form>

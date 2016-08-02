@@ -52,32 +52,33 @@ class Pagination_Library
         if ($this->limit == 'all') {
             return "";
         }
-        $last = ceil($this->total / $this->limit);
+        $last = ceil($this->total / $this->limit); // lay trang cuoi cung cua phan trang
 
-        $start = ($this->page - $link > 0) ? $this->page - $link : 1;
-        $end = (($this->page + $link) > $last) ? $this->page + $link : $last;
 
-        $html = "<ul class ='pagination " . $list_class . "'>";
+        $start = ($this->page - $link > 0) ? $this->page - $link : 1; // trang dau de hien thi
+        $end = (($this->page + $link) < $last) ? $this->page + $link : $last; // trang cuoi de hien thi
+
+        $html = "<ul class ='" . $list_class . "'>";
         $class = ($this->page == 1) ? "disabled" : "";
 
-        $html .= '<li><a href="?limit=' . $this->limit . '&page=' . ($this->page - 1) . '">&laquo;</a> </li>';
+        $html .= '<li class="'.$class.'"><a href="?page=' . ($this->page - 1) . '">&laquo;</a> </li>';
 
-        if ($start > 1) {
-            $html .= "<li><a href='?limit='" . $this->limit . "&page=1>1</a> </li>";
-            $html .= "<li class='disabled'>...</li>";
+        if ($start > 1) { // Them vao dau .. vao truoc
+            $html .= "<li><a href='?page=1'>1</a> </li>";
+            $html .= "<li class='disabled'><span>...</span></li>";
         }
         for ($i = $start; $i <= $end; $i++) {
-            $class = ($this->page == $i) ? "active" : "";
-            $html .= '<li class="' . $class . '"><a href="?limit=' . $this->limit . '&page=' . $i . '">' . $i . '</a></li>';
+            $class = ($this->page == $i) ? "active" : ""; // Neu class hien tai thi active len thoi
+            $html .= '<li class="' . $class . '"><a href="?page=' . $i . '">' . $i . '</a></li>';
         }
 
-        if ($end < $last) {
+        if ($end < $last) { // them vao dau ... vao sau
             $html .= '<li class="disabled"><span>...</span></li>';
-            $html .= '<li><a href="?limit=' . $this->limit . '&page=' . $last . '">' . $last . '</a></li>';
+            $html .= '<li><a href="?page=' . $last . '">' . $last . '</a></li>';
         }
 
         $class = ($this->page == $last) ? "disabled" : "";
-        $html .= '<li class="' . $class . '"><a href="?limit=' . $this->limit . '&page=' . ($this->page + 1) . '">&raquo;</a></li>';
+        $html .= '<li class="' . $class . '"><a href="?page=' . ($this->page + 1) . '">&raquo;</a></li>';
 
         $html .= '</ul>';
         return $html;

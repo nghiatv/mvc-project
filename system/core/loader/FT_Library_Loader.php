@@ -18,11 +18,8 @@ class FT_Library_Loader
 
             require(PATH_SYSTEM . '/library/' . $class . '.php');
 
-
-//            exit;
             $this->{$library} = new $class($args);
-//            var_dump($this->{$library});
-//            die();
+
         }
     }
 }

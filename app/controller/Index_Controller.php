@@ -12,10 +12,8 @@ class Index_Controller extends Base_Controller
     public function indexAction()
     {
         $this->model->load('index');
-        $re = $this->model->index->getAllUsers();
-        $this->view->load('index', array(
-            're' => $re
-        ));
+//        $re = $this->model->index->getAllUsers();
+        $this->view->load('index');
 
 //        echo "<pre>";
 //        var_dump($_SERVER);

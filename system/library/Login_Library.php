@@ -15,7 +15,7 @@ class Login_Library
         if ($check) {
             return true;
         } else {
-            return "Invalid Username";
+            return "Invalid Input. Accept 6-32 characters";
         }
     }
 
